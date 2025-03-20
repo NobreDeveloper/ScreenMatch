@@ -6,6 +6,11 @@ public class Serie extends Titulo{ //Herança
     private boolean ativa;
     private int minutorsPorEpisodio;
 
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
+
     public int getTemporadas() {
         return temporadas;
     }
@@ -41,5 +46,10 @@ public class Serie extends Titulo{ //Herança
     @Override
     public int getDuracaoEmMinutos() {
         return minutorsPorEpisodio * episodiosPorTemporada * temporadas;
+    }
+
+    @Override
+    public String toString() {
+        return "Série: "+ this.getNome() +"(" + this.getAnoDeLancamento() + ")";
     }
 }

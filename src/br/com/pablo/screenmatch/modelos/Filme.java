@@ -5,6 +5,10 @@ import br.com.pablo.screenmatch.calculos.Classificavel;
 public class Filme extends Titulo implements Classificavel { //Herança
     private String diretor;
 
+    public Filme(String nome, int anoDeLancamento){
+        super(nome, anoDeLancamento);
+    }
+
     public String getDiretor() {
         return diretor;
     }
@@ -17,5 +21,10 @@ public class Filme extends Titulo implements Classificavel { //Herança
     @Override
     public int getClassificacao() {
         return (int) pegaMedia()/2;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme: " + getNome() + " (" + getAnoDeLancamento() +")";
     }
 }
